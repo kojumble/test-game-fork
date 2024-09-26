@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg8bdh6hwhsg6"]
+
+[ext_resource type="Material" uid="uid://dactseblwxlp7" path="res://example/example_material.tres" id="1_02bpi"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ooipp"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_ooipp")
+surface_material_override/0 = ExtResource("1_02bpi")

@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://djmql20nthqk6"]
+
+[ext_resource type="Script" path="res://scripts/fpsCount.gd" id="1_o5yf8"]
+[ext_resource type="Script" path="res://scripts/pauseMenu.gd" id="2_c13kk"]
+[ext_resource type="Script" path="res://scripts/varTest.gd" id="3_gphhl"]
+[ext_resource type="PackedScene" uid="uid://b0fx7cvgfmocd" path="res://scenes/subscenes/pause_menu.tscn" id="4_5xnke"]
+
+[node name="gameUI" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_c13kk")
+
+[node name="FPS counter" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 137.0
+offset_bottom = 29.0
+text = "FPS: placeholder"
+script = ExtResource("1_o5yf8")
+
+[node name="pauseMenu" parent="." instance=ExtResource("4_5xnke")]
+layout_mode = 1
+
+[node name="variableTester" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1066.0
+offset_top = 14.0
+offset_right = 1206.0
+offset_bottom = 63.0
+text = "cam y deg: plchldr
+plr x deg: plchldr"
+script = ExtResource("3_gphhl")

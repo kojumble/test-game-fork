@@ -1,0 +1,137 @@
+[gd_resource type="VisualShader" load_steps=12 format=3 uid="uid://on1p7ofxqfan"]
+
+[ext_resource type="Script" path="res://addons/portal/portal_out.gd" id="1_7v8fl"]
+[ext_resource type="Script" path="res://addons/portal/portal_in.gd" id="2_q2d6q"]
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_7dw5a"]
+initialized = true
+properties = "0,2;"
+script = ExtResource("1_7v8fl")
+port_type = 0
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_okldm"]
+constant = Color(1, 0, 0, 1)
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_gt0cc"]
+initialized = true
+properties = "0,4;"
+script = ExtResource("2_q2d6q")
+name_portal = "Color"
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_b81gp"]
+constant = 0.231
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_fmmjx"]
+constant = 0.231
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_fwahm"]
+initialized = true
+script = ExtResource("2_q2d6q")
+name_portal = "Metalic"
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_co0ke"]
+initialized = true
+script = ExtResource("2_q2d6q")
+name_portal = "Roughness"
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_koeeb"]
+initialized = true
+script = ExtResource("1_7v8fl")
+port_type = 4
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_dnn66"]
+initialized = true
+properties = "0,1;"
+script = ExtResource("1_7v8fl")
+port_type = 0
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+
+
+
+void fragment() {
+// ColorConstant:2
+	vec4 n_out2p0 = vec4(1.000000, 0.000000, 0.000000, 1.000000);
+
+
+	vec3 n_out3p0;
+// PortalIn Color:3
+	{
+		n_out3p0 = vec3(n_out2p0.xyz);
+	}
+
+
+	vec3 n_out8p0;
+// PortalOut:8
+	{
+		n_out8p0 = n_out3p0;
+	}
+
+
+// FloatConstant:4
+	float n_out4p0 = 0.231000;
+
+
+	float n_out6p0;
+// PortalIn Metalic:6
+	{
+		n_out6p0 = n_out4p0;
+	}
+
+
+	float n_out9p0;
+// PortalOut:9
+	{
+		n_out9p0 = n_out6p0;
+	}
+
+
+// FloatConstant:5
+	float n_out5p0 = 0.231000;
+
+
+	float n_out7p0;
+// PortalIn Roughness:7
+	{
+		n_out7p0 = n_out5p0;
+	}
+
+
+	float n_out10p0;
+// PortalOut:10
+	{
+		n_out10p0 = n_out7p0;
+	}
+
+
+// Output:0
+	ALBEDO = n_out8p0;
+	METALLIC = n_out9p0;
+	ROUGHNESS = n_out10p0;
+
+
+}
+"
+graph_offset = Vector2(-798.186, -181.956)
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorConstant_okldm")
+nodes/fragment/2/position = Vector2(-840, 120)
+nodes/fragment/3/node = SubResource("VisualShaderNodeCustom_gt0cc")
+nodes/fragment/3/position = Vector2(-540, 100)
+nodes/fragment/4/node = SubResource("VisualShaderNodeFloatConstant_b81gp")
+nodes/fragment/4/position = Vector2(-840, 260)
+nodes/fragment/5/node = SubResource("VisualShaderNodeFloatConstant_fmmjx")
+nodes/fragment/5/position = Vector2(-840, 400)
+nodes/fragment/6/node = SubResource("VisualShaderNodeCustom_fwahm")
+nodes/fragment/6/position = Vector2(-540, 240)
+nodes/fragment/7/node = SubResource("VisualShaderNodeCustom_co0ke")
+nodes/fragment/7/position = Vector2(-540, 380)
+nodes/fragment/8/node = SubResource("VisualShaderNodeCustom_koeeb")
+nodes/fragment/8/position = Vector2(-60, 100)
+nodes/fragment/9/node = SubResource("VisualShaderNodeCustom_dnn66")
+nodes/fragment/9/position = Vector2(-60, 240)
+nodes/fragment/10/node = SubResource("VisualShaderNodeCustom_7dw5a")
+nodes/fragment/10/position = Vector2(-60, 380)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 0, 4, 0, 6, 0, 5, 0, 7, 0, 3, 0, 8, 0, 6, 0, 9, 0, 7, 0, 10, 0, 8, 0, 0, 0, 9, 0, 0, 2, 10, 0, 0, 3)

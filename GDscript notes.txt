@@ -1,0 +1,204 @@
+______Cool stuff/basic shit______
+
+rand()
+	- random interger
+randf()
+	- random float
+
+randi_range(number, number) 
+	- gives a random number in a range
+
+print(" " + str(string))
+	- add a datatype as a string to a print or something, can be done with other datatypes (i.e. var(testVar))
+	
+var health = clamp(0, 100)
+	- clamps the value of health to have a max of 100 and a min of 0
+
+______DATATYPES!!!______
+
+testVar = 40 
+	- sets testVar to 40, basic stuff
+	
+testVar = 40 + 20 
+	- sets testVar to 40 + 20, also basic
+	
+var testVar: int = 14
+var testVar: float = 14.3
+var testVar: string = "hi"
+var testVar: bool = false
+	- sets the variable to be ONLY the defined datatype, cannot be dynamically changed.
+var testVar: = 14
+	- sets the variable to the first detected datatype, then locks it
+	
+testVar += 40
+	- two operators at the same time, just means that it takes the datatype and does what the other operators says it does
+	- heres all the possible operators
+
+
++
+-
+*
+/
+= (used in non if statements and such, like _testVar = 30_)
+
++=
+-=
+*=
+/= 
+== (used in if statements and such, like _if testVar == 30_)
+
+______ACCESSING NODES______
+
+$testmesh.property = ...
+	- $ is a shortcut for get_node()
+	- this script accesses the "testmesh" of the scene, then changes a property (property is a placeholder)
+	- i can insert a path to a script by dragging and dropping the node into the script, and can force it to only
+	- be loaded when the game starts by holding control while dropping it
+	- for example:
+	
+func _ready():
+	var testVar = 3
+	$testlabel.text = testVar
+	$testlabel.modulate Color.AQUA
+
+	- when the game loads (_onready), it sets the variable testVar to 3, and then sets the testlabel to display the value of testVar in its text box, and then the next line sets the text color to aqua
+
+______ARRAYS!!______
+
+var testArray = ["testItem", 3, 5]
+	- This defines the variable as an array with a string and two numerical values
+	- godot can just like. handle mixed data types (pretty cool)
+
+var testArray: Array[String] = ["testItem", "testItem2", "testItem3"]
+	- This defines the variable as an array that contains 3 strings and can only contain strings
+
+testArray[0] = "testItem9"
+	- replaces the first array value with the defined value
+	
+testArray.remove_at(1)
+	- removes the second array value, remember, it starts at 0 not 1
+	
+testArray.append("testItem10")
+	- adds testItem10 to the end of the array, turns into ["testItem", "testItem2", "testItem3", "testItem10"]
+	
+______LOOPS!!!______
+
+for item in testArray:
+	print(item)
+	
+	- simple for loop, finds all array values in the array, then prints their name
+		
+for item in testArray:
+	if item.length() > 5
+		print(item)
+	else
+		print("testOutput2")
+		
+	- another simple for loop, checks to see if any items names in the array has a name longer than 5 characters, and if true, prints its name
+		
+for n in 8:
+	print(n)
+	
+	- starts n at 0, and progressively counts up till it hits 8. does not print 8, it is a hard stop
+		
+var glass := 0.0
+
+while glass < 0.5:
+	glass += randf_range(0.01, 0.2)
+	print(glass)
+	
+print("the glass is half full!")
+
+	-sets a variable named glass as a float at 0.0, then while it is less than .5, it adds a random number from .01 to .2.
+	when it hits .05 and finishes the loop, it then prints "the glass is half full!"
+	
+____________DICTIONAIRY____________
+
+var characters = {
+	"char1": {"Health": 3, "Level": 4],
+	"char2": 2,
+	"char3": 3,
+}
+
+print (characters["char1"]["Level")
+print (characters["char2"])
+characters["char3"] = 30
+characters["char4"] = 80
+
+	- sets a dictionary for 3 characters, prints the health value of char1, prints the value of char2, redefines char3 to be 30, and appends a new char4 at the value of 80
+	
+____________ENUMS____________
+
+Enums are easy ways to define tags in a game, the tags are valued as intergers starting at 0 and counting up by one per enum per section
+
+enum { ALLY, NEUTRAL, ENEMY }
+var unitAllign = ALLY
+	- sets 3 enums, then accesses them with a variable, and the variable sets unitAllign to the enum
+
+If i want to setup multiple sections of enums,
+
+enum Allignments ( ALLY, NEUTRAL, ENEMY }
+var unitAllign = Allignments.ALLY
+	- sets enums under a specific section called Allignments
+	
+I can place the enums in the inspector tab on the right with
+
+@export var unitAllign : Allignments
+
+I can also set the enums to be specific values if i want them to, such as
+
+enum { ALLY = 1, NEUTRAL = 0, ENEMY = -1 }
+
+____________MATCH____________
+
+Godots equivelant of the switch statement, pairs well with enums
+a match executes code depending on the value of a variable
+
+working off of the enum code from the last box:
+
+enum { ALLY = 1, NEUTRAL = 0, ENEMY = -1 }
+@export var unitAllign
+
+func _ready():
+	match unitAllign:
+		Allignments.ALLY
+			print("ally")
+		Allignments.NEUTRAL
+			print("neutral")
+		Allignments.ENEMY
+			print("enemy")
+		_:
+			print("undefined")
+
+	- checks for allignment and prints string based on allignment.
+	- the _: is how you define a default response, incase the enum is undefined or spelt incorrectly
+	
+____________SIGNALS____________
+
+Signals are messages that nodes can send to eachother
+They provide a neater and easier way to update things to multiple scripts at the same time
+
+For example, take leveling up as a player.
+
+If done by a function, the code would get very messy when updating the UI, stats, and unlocks simultaniously
+
+But if done through a signal, it sends one big message to everything
+
+var level = 0
+
+func _on_timer_timeout():
+	leveled_up.emit(levelIncrament)
+		- used to emit the signal, contains the signals message in its brackets
+
+func _level_up():
+	print("leveled up!!!")
+	level += 1
+		- sends a console response to the setup signal, and incraments the level by 1
+
+____________GET AND SET____________
+
+research more
+
+____________CLASSES____________
+
+research more
