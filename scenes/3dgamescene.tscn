@@ -44,6 +44,7 @@ environment = SubResource("Environment_h1iub")
 
 [node name="sun" type="DirectionalLight3D" parent="lighting&enviornment"]
 transform = Transform3D(0.742045, 0.380124, 0.552155, -0.0699013, -0.775314, 0.627696, 0.666696, -0.504375, -0.548747, 5, 6.86697, -5)
+light_energy = 0.192
 shadow_enabled = true
 
 [node name="guy" parent="." instance=ExtResource("1_r8vot")]

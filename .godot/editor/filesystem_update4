@@ -1,4 +1,2 @@
-res://scenes/subscenes/guy.tscn
-res://scripts/playerMovement.gd
 res://scenes/3dgamescene.tscn
-res://scripts/varTest.gd
+res://scenes/subscenes/guy.tscn

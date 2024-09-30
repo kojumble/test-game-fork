@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="thing"
-config/description="cool little robot game"
+config/name="index"
+config/description="thing"
 config/version="0.0.1"
 run/main_scene="res://scenes/3dgamescene.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
@@ -92,6 +92,7 @@ scrollDown={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="forward_plus"
 driver/threads/thread_model=2
 textures/vram_compression/import_etc2_astc=true

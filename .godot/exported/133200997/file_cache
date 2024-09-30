@@ -19,10 +19,10 @@ res://addons/post_processing/resource/fish_eye_example.tres::73ff86850fa85d151d4
 res://addons/post_processing/resource/no_effects_example.tres::75a6352f17a8e3713e21d803cfa003a0::1725341227::res://.godot/exported/133200997/export-4f51beb786f219634d0fbef85b7bb5ff-no_effects_example.res
 res://scenes/chartest/player.tscn::429bfb667c5d980fcfe1a7b253dcdac9::1725341227::res://.godot/exported/133200997/export-ff2d736e49b6a227ad1d4565f0c42149-player.scn
 res://scenes/subscenes/game_ui.tscn::788d34b8f1f978f482c68b2de3ba7895::1725341227::res://.godot/exported/133200997/export-d2ea9dd0168f94f9d584022a1a34a3ad-game_ui.scn
-res://scenes/subscenes/guy.tscn::ef026f2cc08bf9708f4952ee64bb4243::1727377912::res://.godot/exported/133200997/export-93fb42620fe78b9c16d24653273173ef-guy.scn
+res://scenes/subscenes/guy.tscn::ef026f2cc08bf9708f4952ee64bb4243::1727414192::res://.godot/exported/133200997/export-93fb42620fe78b9c16d24653273173ef-guy.scn
 res://scenes/subscenes/pause_menu.tscn::cc524b016a1ec62e97a18008f15c5f18::1725341227::res://.godot/exported/133200997/export-0bec50d807bca92e95459c43566f278b-pause_menu.scn
 res://scenes/2dgamescene.tscn::033c2c9bdd75b36ca8785bebd1a5bb94::1725341227::res://.godot/exported/133200997/export-811c9aacca5de8a26b2c27750df3042b-2dgamescene.scn
-res://scenes/3dgamescene.tscn::1978d334a690c297aef2f5878b2e310f::1727377902::res://.godot/exported/133200997/export-69b7b15b5f072cfa78f57a96d6859f58-3dgamescene.scn
+res://scenes/3dgamescene.tscn::404780d2ab980dd5528d9b899fb6aa79::1727414192::res://.godot/exported/133200997/export-69b7b15b5f072cfa78f57a96d6859f58-3dgamescene.scn
 res://editor_theme.tres::a3412ff945e4d8781a9470f3cad9ace0::1725341227::res://.godot/exported/133200997/export-766ecf95b60ed9ba286f41daf9d8ac94-editor_theme.res
 res://addons/portal/portal_select_stylebox.tres::0ac8d9316c82ec8a173f353f36b97375::1725599233::res://.godot/exported/133200997/export-d13ec671deb42ae86298dfdabead041c-portal_select_stylebox.res
 res://addons/portal/portal_stylebox.tres::539037665ad9cec4b72d3962413a07ad::1725599233::res://.godot/exported/133200997/export-8983e18dc94ad16a037f0d520fd437df-portal_stylebox.res
